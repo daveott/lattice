@@ -1,0 +1,11 @@
+.autotest
+History.txt
+Manifest.txt
+README.txt
+Rakefile
+bin/lattice
+lib/lattice.rb
+lib/lattice/header.rb
+lib/lattice/substitution_proxy.rb
+spec/spec_helper.rb
+spec/lattice/header_spec.rb
