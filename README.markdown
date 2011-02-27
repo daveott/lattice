@@ -18,19 +18,19 @@ Add this to your Gemfile.
 ### Rails 3 Conguration ###
 
 Add something like this to your environment:
-				config.action_mailer.default_url_options = { :host => "my-domain.com" }
-				config.action_mailer.delivery_method = :smtp
+config.action_mailer.default_url_options = { :host => "my-domain.com" }
+config.action_mailer.delivery_method = :smtp
 
-				credentials = YAML.load_file(Rails.root.join("config", "sendgrid.yml"))
+credentials = YAML.load_file(Rails.root.join("config", "sendgrid.yml"))
 
-				ActionMailer::Base.smtp_settings = {
-								:address => "smtp.sendgrid.net",
-								:port => '25',
-								:domain => "my-domain.com",
-								:authentication => :plain,
-								:user_name => credentials["user_name"],
-								:password => credentials["password"]
-				}
+ActionMailer::Base.smtp_settings = {
+				:address => "smtp.sendgrid.net",
+				:port => '25',
+				:domain => "my-domain.com",
+				:authentication => :plain,
+				:user_name => credentials["user_name"],
+				:password => credentials["password"]
+}
 
 ### Usage ###
 TODO
