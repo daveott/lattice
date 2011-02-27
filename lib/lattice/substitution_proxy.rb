@@ -11,7 +11,7 @@ class Lattice::SubstitutionProxy
   end
 
   def and(original)
-    SubstitutionProxy.new(original, header)
+    Lattice::SubstitutionProxy.new(original, header)
   end
 
 end
