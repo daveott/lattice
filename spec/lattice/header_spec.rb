@@ -1,10 +1,10 @@
 require "spec_helper"
 
 describe Lattice::Header do
+  subject { Lattice::Header.new }
 
   describe "#category" do
     let(:data) { { "category" => "Fire at Will!" } }
-    subject { Lattice::Header.new }
 
     before { subject.stub(:data).and_return(data) }
 
@@ -14,8 +14,6 @@ describe Lattice::Header do
   end
 
   describe "#category=" do
-    subject { Lattice::Header.new }
-
     before do
       subject.stub(:data).and_return({})
       subject.category = "Fire at Will!"
@@ -27,8 +25,6 @@ describe Lattice::Header do
   end
 
   describe "#recipients=" do
-    subject { Lattice::Header.new }
-
     before do
       subject.stub(:data).and_return({})
       subject.recipients = "aye@example.com"
@@ -40,8 +36,6 @@ describe Lattice::Header do
   end
 
   describe "#substitute" do
-    subject { Lattice::Header.new }
-
     it "is an instance of SubstitutionProxy" do
       subject.substitute("<aye>").should be_a_kind_of(Lattice::SubstitutionProxy)
     end
@@ -49,7 +43,6 @@ describe Lattice::Header do
 
   describe "#substitutions" do
     let(:data) { { "sub" => { "<token>" => "123" } } }
-    subject { Lattice::Header.new }
 
     before { subject.stub(:data).and_return(data) }
 
@@ -60,7 +53,6 @@ describe Lattice::Header do
 
   describe "#to_json" do
     let(:data) { { "to" => "aye@example.com" } }
-    subject { Lattice::Header.new }
 
     before { subject.stub(:data).and_return(data) }
 
@@ -71,7 +63,6 @@ describe Lattice::Header do
 
   describe "#to_s" do
     let(:data) { { "to" => "aye@example.com" } }
-    subject { Lattice::Header.new }
 
     before { subject.stub(:data).and_return(data) }
 
