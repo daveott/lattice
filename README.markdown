@@ -48,3 +48,8 @@ In a rails mailer class:
         mail(:to => "noreply@my-domain.com", "X-SMTPAPI" => x_smtp_api_headers)
       end
     end
+
+### Authors ###
+
+Robert Pitts (rbxbx)
+Dave Ott (daveott)
