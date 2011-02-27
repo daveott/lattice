@@ -38,6 +38,7 @@ Add something like this to your environment:
 In a rails mailer class:
 
     class UserMailer < ActionMailer::Base
+      include Lattice
     
       def welcome(addresses, tokens, ids)
         sendgrid_recipients(addresses)
