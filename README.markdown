@@ -2,7 +2,7 @@
 
 WARNING: Lattice is currently under development and is not yet available as a gem. Proceed at your own risk.
 
-Lattice is a small library for interacting with Sendgrid's REST API.
+Lattice is a small library for interacting with Sendgrid's [SMTP API](http://wiki.sendgrid.com/doku.php?id=smtp_api).
 
 
 ### About Sendgrid ###
