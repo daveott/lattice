@@ -4,6 +4,9 @@ WARNING: Lattice is currently under development and is not yet available as a ge
 
 Lattice is a small library for interacting with Sendgrid's [SMTP API](http://wiki.sendgrid.com/doku.php?id=smtp_api).
 
+### Features ###
+
+The biggest problem that Lattice solves is providing tokens to email templates for per email custom body content. The Sendgrid API allows you to setup an "X-SMTPAPI" email header in the form of a JSON string with tokens and list of substitutions for those tokens along with email recipients and various other keys such as a category for statistics reporting.
 
 ### About Sendgrid ###
 
@@ -48,6 +51,20 @@ In a rails mailer class:
         mail(:to => "noreply@my-domain.com", "X-SMTPAPI" => x_smtp_api_headers)
       end
     end
+
+By including Lattice in your mailer action you have access to the following methods:
+
+* sendgrid_recipients 
+  An array of email addresses
+
+* sendgrid_category
+  A category string
+
+* sendgrid_substitute 
+  A token name
+  You can also optionally chain additional tokens and substitutions with the "and" method. So you can say substitute any occurance of the token -token- with the values of the given array in order one per email.
+
+* x_smtp_api_headers
 
 ### Authors ###
 
