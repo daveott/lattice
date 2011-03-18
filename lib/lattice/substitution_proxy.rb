@@ -1,9 +1,13 @@
 class Lattice::SubstitutionProxy
-  attr_reader :original, :header
+  attr_reader :header
 
   def initialize(original, header)
-    @original = "<#{original.to_s}>"
+    @original = original
     @header = header
+  end
+
+  def original
+    @original ||= original.to_s.gsub(/^|$/, header.substitution_marker)
   end
 
   def with(*replacements)

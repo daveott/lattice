@@ -12,6 +12,10 @@ module Lattice
     sendgrid_header.substitute(original)
   end
 
+  def sendgrid_substitution_marker(marker)
+    sendgrid_header.substitution_marker = marker
+  end
+
   def sendgrid_category(name)
     sendgrid_header.category = name
   end

@@ -20,6 +20,13 @@ describe Lattice do
     end
   end
 
+  describe "#sendgrid_substitution_marker" do
+    it "delegates to Lattice::Header#substitution_marker" do
+      header.should_receive(:substitution_marker=)
+      sendgrid_substitution_marker("-")
+    end
+  end
+
   describe "#sendgrid_category" do
     it "delegates to Lattice::Header#category" do
       header.should_receive(:category=)

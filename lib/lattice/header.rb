@@ -2,6 +2,7 @@ require 'json'
 
 class Lattice::Header
   attr_accessor :data
+  attr_reader :substitution_marker
 
   def initialize
     data ||= {}
@@ -20,6 +21,10 @@ class Lattice::Header
 
   def recipients=(*addresses)
     data["to"] = *addresses
+  end
+
+  def substitution_marker=(val)
+    @substitution_marker ||= val
   end
 
   def substitute(original)
